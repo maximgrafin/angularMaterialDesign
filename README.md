@@ -1,4 +1,9 @@
 To install app you should use npm.
-Install: npm install
-Start web-app: npm start
-Launch Karma with tests: npm test
+<br />
+Install: <b>npm install</b>
+<br />
+Start web-app: <b>npm start</b>
+<br />
+Launch Karma with tests: <b>npm test</b>
+<br />
+
