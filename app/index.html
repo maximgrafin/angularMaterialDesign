@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bankApp">
+<head>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"/>
+	<title>My AngularJS App</title>
+</head>
+<body>
+
+<md-toolbar layout="row">
+	<div class="md-toolbar-tools">
+		<h1>Bank app</h1>
+	</div>
+</md-toolbar>
+
+
+<div ng-view></div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+
+<script src="app.js"></script>
+<script src="services/storageService.js"></script>
+<script src="services/transportService.js"></script>
+<script src="services/validationService.js"></script>
+<script src="controllers/overviewCtrl.js"></script>
+
+<script src="directives/bankAccount.js"></script>
+<script src="directives/bankAccountEdit.js"></script>
+<script src="directives/bankAccountView.js"></script>
+
+</body>
+</html>

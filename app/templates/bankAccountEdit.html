@@ -1,0 +1,21 @@
+<md-content layout-padding="">
+	<md-input-container flex="">
+		<label>IBAN</label>
+		<input required="" ng-model="account.iban">
+
+		<div ng-messages="accountEditForm.$error">
+			<div ng-message="required">
+				IBAN is required
+			</div>
+		</div>
+	</md-input-container>
+	<md-input-container flex="">
+		<label>BIC</label>
+		<input required="" ng-model="account.bic">
+		<div ng-messages="accountEditForm.$error">
+			<div ng-message="required">
+				BIC is required
+			</div>
+		</div>
+	</md-input-container>
+</md-content>

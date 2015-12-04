@@ -1,0 +1,12 @@
+{
+  "name": "bankApp",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "angular-material": "~1.0.0"
+  }
+}

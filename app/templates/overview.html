@@ -1,0 +1,72 @@
+<div>
+
+	<md-card>
+		<md-card-content flex-gt-sm="90" flex-gt-md="50">
+			<div ng-show="!!errorMassage">{{errorMassage}}</div>
+
+			<div ng-show="accounts.length > 0">
+				<h1>Accounts:</h1>
+
+				<md-card>
+					<md-card-content>
+						<md-progress-linear ng-show="!!isBusy" md-mode="indeterminate"></md-progress-linear>
+
+						<md-card ng-repeat="account in accounts">
+							<md-card-content>
+
+								<bank-account-view ng-show="!isEditMode(account)"
+								                   account="account"></bank-account-view>
+								<bank-account-edit ng-show="isEditMode(account)"
+								                   account="getEditAccount(account)"></bank-account-edit>
+
+							</md-card-content>
+							<md-card-actions layout="row" layout-align="end center">
+
+								<div ng-show="isEditMode(account)">
+									<md-button ng-click="saveAccount(account)" ng-disabled="isBusy"
+									           class="md-raised md-primary">Save
+									</md-button>
+									<md-button ng-click="setEditMode(false, account)" ng-disabled="isBusy"
+									           class="md-raised md-primary">Cancel
+									</md-button>
+								</div>
+
+								<div ng-show="!isEditMode(account)">
+									<md-button ng-click="setEditMode(true, account)" ng-disabled="isBusy"
+									           class="md-raised md-primary">Edit
+									</md-button>
+									<md-button ng-click="showConfirmRemoveAccount($event, account)"
+									           ng-disabled="isBusy"
+									           class="md-raised md-warn">Remove
+									</md-button>
+								</div>
+							</md-card-actions>
+						</md-card>
+					</md-card-content>
+				</md-card>
+
+			</div>
+
+			<md-card>
+				<md-card-content>
+					<h1>Add new:</h1>
+
+					<md-card>
+						<md-card-content>
+							<bank-account-edit account="newAccount"></bank-account-edit>
+						</md-card-content>
+						<md-card-actions layout="row" layout-align="end center">
+							<md-button ng-click="addAccount()" ng-disabled="!isNewAccountValid() || isBusy"
+							           class="md-raised md-primary">Add account
+							</md-button>
+						</md-card-actions>
+					</md-card>
+
+
+
+				</md-card-content>
+			</md-card>
+		</md-card-content>
+	</md-card>
+
+</div>
